@@ -1,12 +1,11 @@
 const fs = require('fs');
-const path = require('path');
 const csv = require('csv-parser');
 const CreateRouteController = require('./CreateRouteController');
 
 module.exports = {
-  readFile(file) {
+  readFile(req) {
     const results = [];
-    fs.createReadStream(path.resolve(file))
+    fs.createReadStream(req)
       .pipe(csv(['ORIG', 'DEST', 'COST']))
       .on('data', (row) => {
         // console.log(row);
