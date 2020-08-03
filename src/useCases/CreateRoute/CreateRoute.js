@@ -6,7 +6,7 @@ module.exports = {
   readFile(req) {
     const results = [];
     fs.createReadStream(req)
-      .pipe(csv(['ORIG', 'DEST', 'COST']))
+      .pipe(csv())
       .on('data', (row) => {
         // console.log(row);
         results.push(row);

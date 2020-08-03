@@ -13,7 +13,9 @@
     "csv-parser": "^2.3.3",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "node-dijkstra": "^2.5.0"
+    "graph-data-structure": "^1.12.1",
+    "node-dijkstra": "^2.5.0",
+    "priorityqueue": "^1.0.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^9.1.2",
