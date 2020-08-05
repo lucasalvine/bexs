@@ -6,7 +6,7 @@ const CreateRoute = require('./src/useCases/CreateRoute/CreateRoute');
 const results = [];
 
 fs.createReadStream('./input-routes.csv')
-  .pipe(csv(['ORG', 'DES', 'COS']))
+  .pipe(csv(['origin', 'destination', 'cost']))
   .on('data', (data) => results.push(data))
   .on('end', () => {
     CreateRoute.file(results);

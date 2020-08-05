@@ -1,6 +1,7 @@
-const map = require('./src/useCases/CreateDijkstras/CreateDijkstrasAlgorithm');
+//const map = require('./src/useCases/CreateDijkstras/CreateDijkstrasAlgorithm');
+const a = require('./src/useCases/FindDijkstras/FindDijkstras');
 
-map.addNode('GRU');
+/* map.addNode('GRU');
 map.addNode('BRC');
 map.addNode('ORL');
 map.addNode('SCL');
@@ -12,6 +13,14 @@ map.addEdge('GRU', 'CDG', 75);
 map.addEdge('GRU', 'SCL', 20);
 map.addEdge('GRU', 'ORL', 56);
 map.addEdge('ORL', 'CDG', 5);
-map.addEdge('SCL', 'ORL', 20);
+map.addEdge('SCL', 'ORL', 20); */
 
-map.findPathWithDijkstra('GRU', 'CDG');
+//
+
+a.findPathWithDijkstra('GRU', 'CDG');
+
+/* const fastcsv = require('fast-csv');
+const fs = require('fs');
+const ws = fs.createWriteStream('out.csv');
+fastcsv.write(data, { headers: true }).pipe(ws);
+ */

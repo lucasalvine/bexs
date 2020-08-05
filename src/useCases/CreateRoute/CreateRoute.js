@@ -1,54 +1,30 @@
-/* const fs = require('fs');
-const csv = require('csv-parser');
- */
 const CreateRouteController = require('./CreateRouteController');
 const ReducerManager = require('../../providers/ReducerManager');
-//const CreateDijkstrasAlgorithm = require('../CreateDijkstras/CreateDijkstrasAlgorithm');
 const { response } = require('express');
 
-module.exports = {
-  file(event) {
+class CreateRoute {
+  constructor() {}
+  index(event) {
     return ReducerManager.run(
       {
-        file: event,
-        readFileNode: [],
+        event: event,
+        response: {},
       },
-      [
-        // readFile,
-        createNode,
-        createEdgeNode,
-        //findPathWithDijkstra,
-      ]
+      [createNode, createEdgeNode]
     );
-  },
-};
-
-/* function readFile(state) {
-  const { readFileNode } = state;
-  const dataNodes = [];
-  fs.createReadStream(state.file)
-    .pipe(csv(['ORG', 'DES', 'COS']))
-    .on('data', (data) => {
-      dataNodes.push(data);
-    });
-
-  return state;
+  }
 }
- */
+
 function createNode(state) {
-  CreateRouteController.generateAddNode(state.file);
+  CreateRouteController.generateAddNode(state.event);
 
   return state;
 }
 
 function createEdgeNode(state) {
-  CreateRouteController.generateEdgeNode(state.file);
+  CreateRouteController.generateEdgeNode(state.event);
 
   return response;
 }
 
-/* function findPathWithDijkstra() {
-  CreateDijkstrasAlgorithm.findPathWithDijkstra('GRU', 'CDG');
-
-  return response;
-} */
+module.exports = new CreateRoute();

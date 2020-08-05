@@ -2,9 +2,9 @@ const mapNode = require('../CreateDijkstras/CreateDijkstrasAlgorithm');
 
 class CreateRouteController {
   generateAddNode(routes) {
-    const nodeOrigin = routes.map((routeOrigin) => routeOrigin.ORG);
+    const nodeOrigin = routes.map((routeOrigin) => routeOrigin.origin);
     const nodeDestination = routes.map(
-      (routeDestination) => routeDestination.DES
+      (routeDestination) => routeDestination.destination
     );
 
     const nodeConcat = nodeOrigin.concat(nodeDestination);
@@ -18,7 +18,7 @@ class CreateRouteController {
 
   generateEdgeNode(routes) {
     return routes.map((route) =>
-      mapNode.addEdge(route.ORG, route.DES, parseInt(route.COS))
+      mapNode.addEdge(route.origin, route.destination, parseInt(route.cost))
     );
   }
 }

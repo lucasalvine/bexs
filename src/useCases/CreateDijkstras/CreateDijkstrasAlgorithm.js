@@ -48,7 +48,7 @@ class Graph {
       path.unshift(backtrace[lastStep]);
       lastStep = backtrace[lastStep];
     }
-    return console.log(`Cost is ${times[endNode]}`);
+    return console.log(`${path}`);
   }
 }
 

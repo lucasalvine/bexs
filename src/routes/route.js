@@ -1,9 +1,9 @@
 const { Router } = require('express');
-const CreateRoute = require('../useCases/CreateRoute/CreateRoute');
-
+//const { createRouteUseCase } = require('../useCases/CreateRoute');
+const FindRoute = require('../useCases/FindRoute/FindRoute');
 const routes = Router();
 
-routes.post('/route', CreateRoute.file);
-routes.get('/bestRoute/');
+//routes.post('/createFile', createRouteUseCase.handle(request, response));
+routes.get('/bestRoute', FindRoute.findRoute);
 
 module.exports = routes;
