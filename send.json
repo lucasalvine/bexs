@@ -1,6 +1,6 @@
 {
   "airports": [
-    ["GRU", "BRC", "10"],
-    ["BRC", "SCL", "5"]
+    { "origin": "GRU", "destination": "BRC", "cost": "10" },
+    { "origin": "BRC", "destination": "SCL", "cost": "5" }
   ]
 }

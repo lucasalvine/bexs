@@ -1,15 +1,11 @@
 const CreateDijkstrasAlgorithm = require('../CreateDijkstras/CreateDijkstrasAlgorithm');
 
 class FindRoute {
-  findRoute(request, response) {
-    const { origin, destination } = request.query;
+  findRoute(request) {
+    const origin = request.origin;
+    const destination = request.destination;
 
-    const bestWay = CreateDijkstrasAlgorithm.findPathWithDijkstra(
-      origin,
-      destination
-    );
-
-    response.status(201).json({ ...bestWay });
+    return CreateDijkstrasAlgorithm.findBestWay(origin, destination);
   }
 }
 

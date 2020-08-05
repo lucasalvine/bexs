@@ -1,16 +1,29 @@
-const fs = require('fs');
+const createCsvFile = require('csv-writer').createObjectCsvWriter;
 
 class CreatFile {
-  createFile(request) {
-    console.log(request.body);
-
+  createFile(request, response) {
     const airportsData = request.body;
+    console.log(airportsData.airports);
 
-    const csvFile = airportsData.airports.join(',');
-
-    fs.writeFile('input-routes.csv', csvFile, (err) => {
-      if (err) return console.log(err);
+    const csvWriter = createCsvFile({
+      path: 'input-routes.csv',
+      header: [
+        { id: 'origin', title: 'origin' },
+        { id: 'destination', title: 'destination' },
+        { id: 'cost', title: 'cost' },
+      ],
     });
+
+    csvWriter
+      .writeRecords(airportsData.airports)
+      .then(() => response.status(201).json({ message: 'CSV created' }))
+      .catch((err) => {
+        console.log(err);
+        response.status(401).json({
+          message:
+            'Cannot be possible create this file, check the JSON format.',
+        });
+      });
   }
 }
 

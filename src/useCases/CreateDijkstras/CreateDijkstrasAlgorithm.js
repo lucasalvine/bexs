@@ -16,7 +16,7 @@ class Graph {
     this.adjacencyList[node2].push({ node: node1, weight });
   }
 
-  findPathWithDijkstra(startNode, endNode) {
+  findBestWay(startNode, endNode) {
     const times = {};
     const backtrace = {};
     const pq = PriorityQueue;
@@ -48,7 +48,7 @@ class Graph {
       path.unshift(backtrace[lastStep]);
       lastStep = backtrace[lastStep];
     }
-    return console.log(`${path}`);
+    return `${path}`;
   }
 }
 

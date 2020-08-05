@@ -1,30 +1,17 @@
 const CreateRouteController = require('./CreateRouteController');
-const ReducerManager = require('../../providers/ReducerManager');
-const { response } = require('express');
 
 class CreateRoute {
-  constructor() {}
-  index(event) {
-    return ReducerManager.run(
-      {
-        event: event,
-        response: {},
-      },
-      [createNode, createEdgeNode]
-    );
+  createNode(state) {
+    CreateRouteController.generateAddNode(state);
+
+    return state;
   }
-}
 
-function createNode(state) {
-  CreateRouteController.generateAddNode(state.event);
+  createEdgeNode(state) {
+    CreateRouteController.generateEdgeNode(state);
 
-  return state;
-}
-
-function createEdgeNode(state) {
-  CreateRouteController.generateEdgeNode(state.event);
-
-  return response;
+    return state;
+  }
 }
 
 module.exports = new CreateRoute();
