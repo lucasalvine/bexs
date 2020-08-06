@@ -8,7 +8,7 @@
     "dev": "nodemon src/server.js"
   },
   "bin": {
-    "bexs_cli": "src/views/viewCli.js",
+    "bexs_cli": "src/views/ViewCli.js",
     "bexs": "src/useCases/SaveFile/SaveFile.js"
   },
   "author": "Lucas Cunha",
