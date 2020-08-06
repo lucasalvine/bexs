@@ -1,4 +1,4 @@
-const PriorityQueue = require('./CreatePriorityQueue');
+const PriorityQueue = require('../CreateQueue/CreatePriorityQueue');
 
 class Graph {
   constructor() {
@@ -17,14 +17,14 @@ class Graph {
   }
 
   findBestWay(startNode, endNode) {
-    const times = {};
+    const costs = {};
     const backtrace = {};
     const pq = PriorityQueue;
-    times[startNode] = 0;
+    costs[startNode] = 0;
 
     this.nodes.forEach((node) => {
       if (node !== startNode) {
-        times[node] = Infinity;
+        costs[node] = Infinity;
       }
     });
 
@@ -34,11 +34,11 @@ class Graph {
       const shortestStep = pq.dequeue();
       const currentNode = shortestStep[0];
       this.adjacencyList[currentNode].forEach((neighbor) => {
-        const time = times[currentNode] + neighbor.weight;
-        if (time < times[neighbor.node]) {
-          times[neighbor.node] = time;
+        const cost = costs[currentNode] + neighbor.weight;
+        if (cost < costs[neighbor.node]) {
+          costs[neighbor.node] = cost;
           backtrace[neighbor.node] = currentNode;
-          pq.enqueue([neighbor.node, time]);
+          pq.enqueue([neighbor.node, cost]);
         }
       });
     }
@@ -48,7 +48,7 @@ class Graph {
       path.unshift(backtrace[lastStep]);
       lastStep = backtrace[lastStep];
     }
-    return `${path}`;
+    return `${path} and cost is ${costs[endNode]}`;
   }
 }
 

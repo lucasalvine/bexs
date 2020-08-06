@@ -4,11 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "NODE_ENV=test jest",
     "dev": "nodemon src/server.js"
   },
   "bin": {
-    "cli_version": "src/views/viewCli.js"
+    "bexs_cli_version": "src/views/viewCli.js"
   },
   "author": "Lucas Cunha",
   "license": "ISC",
@@ -18,7 +18,8 @@
     "csv-writer": "^1.6.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "inquirer": "^7.3.3"
+    "inquirer": "^7.3.3",
+    "jest": "^26.2.2"
   },
   "devDependencies": {
     "@commitlint/cli": "^9.1.2",

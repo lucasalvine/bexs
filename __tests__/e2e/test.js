@@ -1,4 +1,4 @@
-const map = require('./src/useCases/CreateDijkstras/CreateDijkstrasAlgorithm');
+const map = require('../../src/useCases/CreateAlgorithm/CreateAlgorithm');
 //const a = require('./src/useCases/FindDijkstras/FindDijkstras');
 
 map.addNode('GRU');

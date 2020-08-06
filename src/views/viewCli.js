@@ -2,8 +2,10 @@
 
 const program = require('commander');
 const inquirer = require('inquirer');
+const FindRoute = require('../useCases/FindRoute/index');
 
 program.command('routes [routes]').action(async (routes) => {
+  console.log(process.argv[1]);
   let answers;
   if (!routes) {
     answers = await inquirer.prompt([
@@ -16,12 +18,13 @@ program.command('routes [routes]').action(async (routes) => {
     ]);
   }
 
-  const data = [];
-  data.push({
-    route: answers.routes.split('-'),
-  });
+  const [origin, destination] = answers.routes.toUpperCase().split('-');
 
-  console.log(`? Best route: `, data);
+  const data = {
+    query: { origin: origin, destination: destination },
+  };
+
+  FindRoute.index(data, false);
 });
 
 program.parse(process.argv);

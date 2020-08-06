@@ -1,4 +1,4 @@
-const mapNode = require('../CreateDijkstras/CreateDijkstrasAlgorithm');
+const mapNode = require('../CreateAlgorithm/CreateAlgorithm');
 
 class CreateRouteController {
   generateAddNode(routes) {

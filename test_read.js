@@ -12,9 +12,8 @@ fs.createReadStream('./input-routes.csv')
 
 //TODO
 /*
-  3 - começar a parte do CLI
   4 - testar a aplicação
     4.1 - verificar a cobertura dos testes usando o JEST
-  5 - dockerizar a aplicação
+  5 -   
   6 - criar o readme
    */

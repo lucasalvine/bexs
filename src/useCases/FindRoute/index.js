@@ -21,7 +21,9 @@ function createRoute(resultFile, request, response) {
   CreateRoute.createNode(resultFile);
   CreateRoute.createEdgeNode(resultFile);
 
-  const findBetterWay = FindRoute.findRoute(request.query);
+  const findBetterWay = FindRoute.findRoute(request.query, response);
+
+  if (!response) console.log(`? Best route: `, findBetterWay);
 
   response.status(201).json({ best_route: findBetterWay });
 }
