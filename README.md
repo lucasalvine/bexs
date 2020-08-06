@@ -51,13 +51,13 @@ $
 ```javascript
 {
   "airports": [
-    ["GRU", "BRC", "10"],
-    ["BRC", "SCL", "5"],
-    ["GRU", "CDG", "75"],
-    ["GRU", "SCL", "20"],
-    ["GRU", "ORL", "56"],
-    ["ORL", "CDG", "5"],
-    ["SLC", "ORL", "20"]
+    { "origin": "GRU", "destination": "BRC", "cost": "10" },
+    { "origin": "BRC", "destination": "SCL", "cost": "5" },
+		{ "origin": "GRU", "destination": "CDG", "cost": "75"},
+		{ "origin": "GRU", "destination": "SCL", "cost": "20"},
+		{ "origin": "GRU", "destination": "ORL", "cost": "56"},
+		{ "origin": "ORL", "destination": "CDG", "cost": "5"},
+		{ "origin": "SCL", "destination": "ORL", "cost": "20"}
   ]
 }
 ```

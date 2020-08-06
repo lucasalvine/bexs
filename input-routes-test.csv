@@ -1,0 +1,3 @@
+origin,destination,cost
+GRU,BRC,10
+BRC,SCL,5

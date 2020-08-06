@@ -21,11 +21,20 @@ function createRoute(resultFile, request, response) {
   CreateRoute.createNode(resultFile);
   CreateRoute.createEdgeNode(resultFile);
 
-  const findBetterWay = FindRoute.findRoute(request.query, response);
-
-  if (!response) console.log(`? Best route: `, findBetterWay);
-
-  response.status(201).json({ best_route: findBetterWay });
+  try {
+    const findBetterWay = FindRoute.findRoute(request.query, response);
+    if (!response) return console.log(`? Best route: `, findBetterWay);
+    return response.status(201).json({ best_route: findBetterWay });
+  } catch {
+    if (!response)
+      return console.log(
+        `? Cannot find the best route to: ${request.query.origin} and ${request.query.destination}`
+      );
+    else
+      return response
+        .status(401)
+        .json({ message: 'Cannot find the best route' });
+  }
 }
 
 module.exports = new Index();

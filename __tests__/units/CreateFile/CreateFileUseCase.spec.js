@@ -20,15 +20,15 @@ describe('Create File', () => {
   it('after receive wrong data json, create a csv file', () => {
     const data = {
       body: {
-        airports: [
+        error: [
           { err: 'GRU', destination: 'BRC', cost: '10' },
           { err: 'BRC', destination: 'SCL', cost: '5' },
         ],
       },
     };
 
-    CreateFile.createFile(data);
+    const file = CreateFile.createFile(data);
 
-    expect(401);
+    expect(file).toBe(false);
   });
 });

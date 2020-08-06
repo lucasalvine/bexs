@@ -8,6 +8,7 @@ class CreateRoute {
       console.log(
         'Cannot possible to create airport. Please, check the input-routes file.'
       );
+      return false;
     }
 
     return state;
@@ -20,6 +21,7 @@ class CreateRoute {
       console.log(
         'Cannot possible to create airport. Please, check the input-routes file.'
       );
+      return false;
     }
   }
 }

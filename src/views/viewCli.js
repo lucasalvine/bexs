@@ -5,7 +5,6 @@ const inquirer = require('inquirer');
 const FindRoute = require('../useCases/FindRoute/index');
 
 program.command('routes [routes]').action(async (routes) => {
-  console.log(process.argv[1]);
   let answers;
   if (!routes) {
     answers = await inquirer.prompt([

@@ -1,23 +1,11 @@
-const CreateDijkstrasAlgorithm = require('../CreateAlgorithm/CreateAlgorithm');
+const CreateAlgorithm = require('../CreateAlgorithm/CreateAlgorithm');
 
 class FindRoute {
-  findRoute(request, response) {
+  findRoute(request) {
     const origin = request.origin;
     const destination = request.destination;
 
-    try {
-      return CreateDijkstrasAlgorithm.findBestWay(origin, destination);
-    } catch (err) {
-      if (!response)
-        console.log(
-          `Cannot find the best routes using this parameters: ${origin} - ${destination}`
-        );
-      else {
-        response.status(401).json({
-          message: `Cannot find the best routes using this parameters: ${origin} - ${destination}`,
-        });
-      }
-    }
+    return CreateAlgorithm.findBestWay(origin, destination);
   }
 }
 
