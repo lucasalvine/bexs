@@ -21,24 +21,20 @@ Além disso, o sistema tem uma CLI que, depois de ser inserido o csv das rotas �
 ```
 src                 # Código da aplicação
 ├─ __test__         # Arquivos de testes do sistema
-├─ app              # Arquivos necessário no projeto
-├── controllers     # Arquivo de controle do sistema
-├── models          # Arquivo de modelos da base de dados usado
-├── services        # Arquivo de faz a interação entre o repositorio
-├── repositories    # Arquivo que faz a interação com o banco de dados
-├── helpers         # Arquivos de auxilio, no caso, as validações
-├─ config           # Pasta de configuração do banco de dados
-├─ database         # Pasta com os arquivos de migração
+├─ src              # Arquivos do projeto
+├── routes          # Arquivo de routas do sistema
+├── useCases        # Casos de Uso do Sistema
+├── views           # Arquivo de visualização do Sistema
 ├─ app.js           # Classe inicial do sistema
-├─ routes.js        # Classe de rotas
 ├─ server.js        # Classe que inicia o servidor
 ```
 
 ### Instruções para rodar a API
 
 ```
-#
-$
+# Inicializando o projeto
+$ Faça o download da pasta do projeto, inicia com `npm install`
+
 
 ```
 
