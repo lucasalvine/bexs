@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1596745201404" clover="3.2.0">
-  <project timestamp="1596745201404" name="All files">
+<coverage generated="1596747431090" clover="3.2.0">
+  <project timestamp="1596747431090" name="All files">
     <metrics statements="136" coveredstatements="80" conditionals="22" coveredconditionals="11" methods="30" coveredmethods="21" elements="188" coveredelements="112" complexity="0" loc="136" ncloc="136" packages="9" files="12" classes="12"/>
     <package name="src">
       <metrics statements="10" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
@@ -186,7 +186,7 @@
     </package>
     <package name="src.views">
       <metrics statements="11" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="2" coveredmethods="0"/>
-      <file name="viewCli.js" path="/home/lucas/curso/bexs/src/views/viewCli.js">
+      <file name="ViewCli.js" path="/home/lucas/curso/bexs/src/views/ViewCli.js">
         <metrics statements="11" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="2" coveredmethods="0"/>
         <line num="3" count="0" type="stmt"/>
         <line num="4" count="0" type="stmt"/>

@@ -6,6 +6,8 @@ O Challenge, constitui em elebora um sistema com duas rotas, sendo uma para salv
 
 Além disso, o sistema tem uma CLI que, depois de ser inserido o csv das rotas é executado, solicita para que o usuário insira, no terminal, as rotas para que seja calculado a melhor rota.
 
+Para fazer a busca da melhor rota, usei o algoritmo de Dijkstra's, que parte do principio de como os grafos são construídos e utilizados.
+
 ### Tecnologias utilizadas
 
 - [nodejs](https://nodejs.org/en/)
@@ -35,12 +37,28 @@ src                 # Código da aplicação
 # Inicializando o projeto
 $ Faça o download da pasta do projeto, inicia com `npm install`
 
+# Para executar os teste
+$ npm test
+
+# Para carregar o arquivo no projeto
+$ bexs file $path_file
+
+# Para pesquisar uma rota usando o CLI
+$ bexs_cli routes
+$ ? Please enter the route: AAA-AAA
+
+# Executando o REST
+$ npm start
+
 
 ```
 
 ### Sobre as rotas criadas
 
-### Executando os testes da API localmente
+- POST - Salva as rotas no arquivo dentro do sistema.
+- GET - Faz a busca pela melhor rota.
+
+### Formato dos arquivos
 
 - No caso do POST passar um objeto no formato JSON:
 
@@ -56,6 +74,19 @@ $ Faça o download da pasta do projeto, inicia com `npm install`
 		{ "origin": "SCL", "destination": "ORL", "cost": "20"}
   ]
 }
+```
+
+- No caso do txt:
+
+```javascript
+origin, destination, cost;
+GRU, BRC, 10;
+BRC, SCL, 5;
+GRU, CDG, 75;
+GRU, SCL, 20;
+GRU, ORL, 56;
+ORL, CDG, 5;
+SCL, ORL, 20;
 ```
 
 ### Thats it ! :coffee:
